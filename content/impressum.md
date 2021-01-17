@@ -1,7 +1,7 @@
 ---
 title: "Impressum"
 date: 2021-01-17T17:32:26+01:00
-draft: true
+draft: false
 ---
 ## Informationspflicht laut § 5 TMG.
 
