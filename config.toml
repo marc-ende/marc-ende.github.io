@@ -98,17 +98,17 @@ canonifyurls = true
 
 [[menu.misc]]
   weight = 2
-  identifier = "impress"
-  name = "Impress"
+  identifier = "impressum"
+  name = "Impressum"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-balance-scale\"></i>"
-  url = "/impress"
+  url = "/impressum"
 
 [params]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
   # Default format is: January 2, 2006
-  dateFormat = "2 January 2006"
+  # dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
   # keywords = ["development", "next-gen"]
