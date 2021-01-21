@@ -33,30 +33,19 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-
-      # - name: rsync deployments
-      #   uses: burnett01/rsync-deployments@4.1
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
       #   with:
-      #     switches: -avzr --delete
-      #     path: ./public/
-      #     remote_path: /home/website/sites/marc-ende.de/
-      #     remote_host: gate.sys-int.de
-      #     remote_port: 222
-      #     remote_user: website
-      #     remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
 
-      - name: sftp Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@4.1
         with:
-          username: 'website'
-          server: 'gate.sys-int.de'
-          port: '222'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './public/*'
-          remote_path: '/home/website/sites/marc-ende.de/'
-          args: '-o ConnectTimeout=5'
+          switches: -avzr --delete
+          path: ./public/
+          remote_path: /home/website/sites/marc-ende.de/
+          remote_host: gate.sys-int.de
+          remote_port: 222
+          remote_user: website
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }} 
