@@ -42,10 +42,10 @@ jobs:
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: 'websites'
+          username: 'website'
           server: 'gate.sys-int.de'
           port: '222'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
           local_path: './public/*'
-          remote_path: '/home/websites/sites/marc-ende.de/'
+          remote_path: '/home/website/sites/marc-ende.de/'
           args: '-o ConnectTimeout=5'
