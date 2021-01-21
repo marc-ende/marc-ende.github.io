@@ -38,3 +38,13 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'websites'
+          server: 'gate.sys-int.de'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          local_path: './public/*'
+          remote_path: '/home/websites/sites/marc-ende.de/'
+          args: '-o ConnectTimeout=5'
